@@ -1,6 +1,7 @@
 histnorm <- function(data, linecol="black", lineweight=1, main = "default", xlab = "default", ...){
   args <- list(...)
   dataname <- deparse(substitute(data))
+  data <- na.omit(data)
   isDensity <- isTRUE(args[['prob']])
   xlimits <- args[['xlim']]
   ylimits <- args[['ylim']]
@@ -23,8 +24,14 @@ histnorm <- function(data, linecol="black", lineweight=1, main = "default", xlab
     xlabel <- xlab
   }
   if(!isDensity){
-    x11()
-    h <- hist(data, warn.unused = FALSE, ...)
+    tryCatch({
+      x11()
+      h <- hist(data, warn.unused = FALSE, ...)
+    },
+    error=function(cond){
+      message(cond)
+      dev.off()
+    })
     if(!is.null(xlimits)){
       xfit <- seq(xlimits[1], xlimits[2], length = 100)      
     }
@@ -50,8 +57,14 @@ histnorm <- function(data, linecol="black", lineweight=1, main = "default", xlab
       hist(data, main=maintitle, xlab=xlabel,...)
     }
     else{
-      x11()
-      h <- hist(data, ...)
+      tryCatch({
+        x11()
+        h <- hist(data, ...)
+      },
+      error=function(cond){
+        message(cond)
+        dev.off()
+      })
       c <- curve(dnorm(x, mean=mean(data), sd=sd(data)), add = TRUE)
       ylimits <- c(0, max(c(c$y, max(h$density))))
       dev.off()
