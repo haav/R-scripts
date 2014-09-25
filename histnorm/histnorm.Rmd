@@ -1,0 +1,53 @@
+---
+title: "Normaaljaotusega histogrammi funktsioon"
+author: "Allar Haav"
+date: "September 25, 2014"
+output:
+  html_document: default
+  pdf_document:
+    fig_height: 3.5
+    fig_width: 4
+---
+```{r, echo=FALSE}
+set.seed(666)
+```
+Kirjutasin viimasest praktikumist inspireerituna ¸he v‰ikese funktsiooni normaaljaotusega histogrammide kergemaks meisterdamiseks: on ehk v‰hem segadust ning hılpsam toimetada. Funktsioon asub omaette failis: `histnorm.R`. Esmalt tuleb see fail asetada kuhugi mugavasse ja eeldatavalt ilma t‰pit‰htedeta paika. Kıige parem on aga kui see asub teie avatud projekti kaustas: siis ei pea pikalt asukohta t‰psustama.  
+  
+  
+Selleks, et funktsiooni kasutada, tuleb see ka eelnevalt laadida. Selleks on olemas k‰sk `source()`
+```{r, eval=FALSE}
+# Kui fail asub suvalises kohas, tuleb selle asupaik pikalt kirjeldada:
+source("C:/R/Andmeanalyys/scripts/histnorm.R")
+# Kui aga fail asub avatud projekti (alam)kaustas, siis alternatiivselt:
+source("scripts/histnorm.R")
+```
+```{r, echo=FALSE}
+source("histnorm.R")
+```
+
+Funktsioon `histnorm()` on pıhimıtteliselt sama, mis `hist()` ning lisaparameetreid tasub just viimase helpist vaadata-otsida. Erinevus on aga see, et lisaks joonistatakse peale vastava normaaljaotuse funktsioon joonena. Kui histogrammi v‰rvust, telgede tekste jms saab tavap‰raselt muuta, siis joonele lisasin kaks parameetrit: `linecol` ja `lineweight`, mis muudavad vastavalt joone v‰rvi ja paksust. Vaikev‰‰rtused on must ja 1.  
+  
+  
+Teeme mıned n‰ited l‰bi. Esmalt teeme vektori 100 suvalise v‰‰rtusega normaaljaotusest, mille keskv‰‰rtus on 10 ning standardh‰lve 1. Seej‰rel teeme sellest graafiku:
+```{r}
+x <- rnorm(100, 10, 1)
+histnorm(x)
+```
+\clearpage
+Kui lisame parameetri `prob = TRUE`, siis kuvatakse y-teljele hoopis tıen‰osusv‰‰rtused.
+```{r}
+histnorm(x, prob=TRUE)
+```
+  
+Joone v‰rvi ja paksust saab niisiis muuta kahe lisaparameetriga `linecol` ja `lineweight`:
+```{r}
+histnorm(x, linecol="red", lineweight=3)
+```
+\clearpage
+Ja otseloomulikult saab ka kıike muud histogrammi juures muuta. N‰iteks:
+```{r}
+histnorm(x, linecol="red", lineweight=2, main="Normaaljaotusega histogramm", 
+         col="black", xlim=c(7,13), ylim=c(0,21), xlab="", ylab="Sagedus")
+```
+
+Loodan, et sellest on kasu :)
