@@ -3,10 +3,10 @@ title: "Normaaljaotusega histogrammi funktsioon"
 author: "Allar Haav"
 date: "September 25, 2014"
 output:
-  html_document: default
   pdf_document:
     fig_height: 3.5
     fig_width: 4
+  html_document: default
 ---
 ```{r, echo=FALSE}
 set.seed(666)
