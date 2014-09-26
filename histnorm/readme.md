@@ -7,4 +7,4 @@ või isegi
 `source("scripts/histnorm.R")`  
   
 Tõmba fail alla siit: https://cdn.rawgit.com/haav/R-scripts/master/histnorm/histnorm.R  
-Vaata näiteid: https://cdn.rawgit.com/haav/R-scripts/master/histnorm/histnorm.html
+Vaata põhjalikumaid kasutusjuhendeid siit: https://cdn.rawgit.com/haav/R-scripts/master/histnorm/histnorm.html
