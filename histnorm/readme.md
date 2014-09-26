@@ -1,10 +1,10 @@
 histnorm
 =========
 Funktsioon normaaljaotusega histogrammide tegemiseks.  
-Kasutamine: salvesta `histnorm.R` kusagile sobivasse kohta (nt RStudio projekti kausta vıi pigem isegi selle alamkausta) ning lae funktsioon k‰suga `source()`. N‰iteks:  
+Kasutamine: salvesta `histnorm.R` kusagile sobivasse kohta (nt RStudio projekti kausta v≈ëi pigem isegi selle alamkausta) ning lae funktsioon k√§suga `source()`. N√§iteks:  
 `source("C:/R/Andmeanalyys/scripts/histnorm.R")`
-vıi isegi  
+v≈ëi isegi  
 `source("scripts/histnorm.R")`  
   
-Tımba fail alla siit: https://cdn.rawgit.com/haav/R-scripts/master/histnorm/histnorm.R  
-Vaata pıhjalikumaid kasutusjuhendeid siit: https://cdn.rawgit.com/haav/R-scripts/master/histnorm/histnorm.html
+T≈ëmba fail alla siit: https://cdn.rawgit.com/haav/R-scripts/master/histnorm/histnorm.R  
+Vaata p≈ëhjalikumaid kasutusjuhendeid siit: https://rawgit.com/haav/R-scripts/master/histnorm/histnorm.html
